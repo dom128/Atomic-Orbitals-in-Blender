@@ -6,11 +6,11 @@ Use Blender's powerfull raytracing engine to plot hydrogen-like atomic wavefunct
 ![](https://github.com/dom128/Atomic-Orbitals-in-Blender/blob/main/631.png)
 (left) Probability density distribution $\rho (\vec{x}) = ||\psi_{6 3 1}(\vec{x})||^2$ (right) Wave function $\psi_{6 3 1}(\vec{x}) = \langle \vec{x} | n=6,m=3,l=1 \rangle $
  
-![alt text](https://github.com/dom128/Atomic-Orbitals-in-Blender/blob/main/PA.png)
-Wave functions $\psi_{n m l}(\vec{x}) = \langle \vec{x} | n,m,l \rangle $ 
+![alt text](https://github.com/dom128/Atomic-Orbitals-in-Blender/blob/main/composite.jpeg)
+(left) Probability density distributions $\rho (\vec{x}) = ||\psi_{n m l}(\vec{x})||^2$
+(rigth) Wave functions $\psi_{n m l}(\vec{x}) = \langle \vec{x} | n,m,l \rangle $ 
  
-![alt text](https://github.com/dom128/Atomic-Orbitals-in-Blender/blob/main/PD.png)
-Probability density distributions $\rho (\vec{x}) = ||\psi_{n m l}(\vec{x})||^2$
+
 
 
 
