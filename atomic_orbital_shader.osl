@@ -103,7 +103,7 @@ shader generated_volume(
     float r = pow(r2,0.5);
     
     float sin_theta = pow((pow(x,2)+pow(y,2))/r2,0.5);
-    float cos_theta = pow(pow(z,2)/r2,0.5);
+    float cos_theta = z/pow(r2,0.5);
 
     float phi = Phi(x,y);
     
