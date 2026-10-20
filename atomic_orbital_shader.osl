@@ -48,7 +48,7 @@ complex sphericalHarm_(int m, int l, float sin_theta, float cos_theta, float phi
         tmp+=pow(-1,l+q) * fac(l)/(fac(l-q)*fac(q)) * fac(2*(l-q))/((fac(2*(l-q) - (l+abs(m)))*fac(l+abs(m)))) * pow(cos_theta, l-abs(m)-2*q);
     }
     tmp*=pow(2,-l)*pow(sin_theta,abs(m));
-    tmp*=sqrt((2*l+1)*0.5 + fac(l-abs(m))/fac(l) + fac(l+abs(m))/fac(l) );
+    tmp*=sqrt((2*l+1)*0.5 * fac(l-abs(m))/fac(l) * fac(l+abs(m))/fac(l) );//tmp*=sqrt((2*l+1)*0.5 + fac(l-abs(m))/fac(l) + fac(l+abs(m))/fac(l) );
     tmp/=sqrt(2*pi);
     complex z;
     z.real = tmp*cos(m*phi);
@@ -103,7 +103,7 @@ shader generated_volume(
     float r = pow(r2,0.5);
     
     float sin_theta = pow((pow(x,2)+pow(y,2))/r2,0.5);
-    float cos_theta = pow(pow(z,2)/r2,0.5);
+    float cos_theta = z/pow(r2,0.5);
 
     float phi = Phi(x,y);
     
@@ -122,8 +122,5 @@ shader generated_volume(
     color rgb_inverted_ = color("rgb",1-rgb_[0], 1-rgb_[1], 1-rgb_[2]);
 
     
-    PD = (rgb_inverted_*absorption()+rgb_*emission())*pow((pow(density*psi_.real,2)+pow(density*psi_.imag,2)),1);
-
-    
-    
+    PD = (rgb_inverted_*absorption()+rgb_*emission())*psi_.real;//(rgb_inverted_*absorption()+rgb_*emission())*pow((pow(density*psi_.real,2)+pow(density*psi_.imag,2)),1); 
 }
